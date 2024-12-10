@@ -1,0 +1,71 @@
+:root {
+  --color-background: #fcfcfc;
+  --color-background-secondary: #f3f3f3;
+  --color-foreground: #ffffff;
+  --color-border: #e6e6e6;
+  --color-text-header: #444444;
+  --color-text-body: #6f6f6f;
+  --color-text-secondary: #717171;
+  --color-text-invert: #ffffff;
+  --color-text-link: #4ec3f5;
+  --color-branding: #3d5af1;
+  --color-branding-transparent: #3d5af140;
+
+  --color-alert: #ff304f;
+  --color-success: #45b81f;
+  --color-on-hover: #0000000f;
+
+  --box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05) !important;
+  --box-shadow-hover: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+    0 10px 10px -5px rgba(0, 0, 0, 0.04) !important;
+
+  --spacing-0: 4px;
+  --spacing-1: 8px;
+  --spacing-2: 16px;
+  --spacing-3: 24px;
+  --spacing-4: 36px;
+  --spacing-5: 64px;
+
+  --radius: 4px;
+  --radius-2: 10px;
+
+  --size-text-small: 0.7rem;
+  --size-text-medium: 1rem;
+  --size-text-lage: 1.5rem;
+}
+
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
