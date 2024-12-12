@@ -31,13 +31,7 @@ const quoteSlice = createSlice({
 
 export const fetchQuotes = createAsyncThunk("quotes/getQuotes", async () => {
   try {
-    const urlHeaders = {
-      headers: { "X-Api-Key": "lkUJ9496N0VvDW6t8n8tJw==BTfXZMXc9XOWe6Yn" },
-    };
-    const response = await fetch(
-      "https://api.api-ninjas.com/v1/quotes",
-      urlHeaders
-    );
+    const response = await fetch("http://localhost:3000/quotes");
     const data = response.json();
     return data;
   } catch (err) {

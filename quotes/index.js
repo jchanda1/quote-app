@@ -1,10 +1,6 @@
 const express = require("express");
 const router = express.Router();
 
-// router.get("/", (req, res) => {
-//   res.json({ success: "Hello from the quotes app" });
-// });
-
 const fetchQuotes = async () => {
   try {
     const urlHeaders = {
