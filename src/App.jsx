@@ -4,7 +4,7 @@ import {
   fetchQuotes,
   selectAllQuotes,
   selectLoadingState,
-} from "./store/slices/quoteSlice";
+} from "./store/slices/quoteSlice.js";
 import { useDispatch, useSelector } from "react-redux";
 import Card from "./components/UI/Card.jsx";
 import { CircularProgress } from "@mui/material";
