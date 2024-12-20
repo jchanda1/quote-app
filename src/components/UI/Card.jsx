@@ -7,7 +7,9 @@ class Card extends React.Component {
     return (
       <div className="card">
         <div>{this.props.quote}</div>
-        <div>{this.props.author}</div>
+        <div>
+          <em>{this.props.author}</em>
+        </div>
       </div>
     );
   }

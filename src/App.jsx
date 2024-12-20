@@ -14,9 +14,7 @@ function App() {
   const dispatch = useDispatch();
 
   const quote = useSelector(selectAllQuotes);
-  console.log(quote);
   const loading = useSelector(selectLoadingState);
-  console.log(loading);
 
   const quoteCard = <Card quote={quote.quote} author={quote.author} />;
 

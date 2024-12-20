@@ -7,7 +7,6 @@ const app = express();
 const port = 3000;
 
 const weather = require("./quotes");
-const { useCallback } = require("react");
 
 app.use(express.json());
 
@@ -25,7 +24,7 @@ const corsOptions = {
 
 app.use(cors(corsOptions));
 
-const limiter = rateLimit({ windowMs: 1000, max: 1 });
+const limiter = rateLimit({ windowMs: 1000, max: 5 });
 app.use(limiter);
 
 app.get("/", (req, res) => res.json({ Success: "hello worlds" }));
