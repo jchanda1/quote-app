@@ -1,12 +1,12 @@
 import React from "react";
 import { render, screen, fireEvent } from "@testing-library/react";
 import { Provider } from "react-redux";
-import configureStore from "redux-mock-store";
+import configureMockStore from "redux-mock-store";
 import thunk from "redux-thunk";
 import App from "../App";
 
 const middlewares = [thunk];
-const mockStore = configureStore(middlewares);
+const mockStore = configureMockStore(middlewares);
 
 const initialState = {
   quotes: {
@@ -65,7 +65,9 @@ test("button click toggles quote fetch", () => {
   );
   const buttonElement = screen.getByText(/Click for a new quote/i);
   fireEvent.click(buttonElement);
-  expect(store.getActions()).toContainEqual(expect.objectContaining({ type: "quotes/fetchQuotes/pending" }));
+  expect(store.getActions()).toContainEqual(
+    expect.objectContaining({ type: "quotes/fetchQuotes/pending" })
+  );
 });
 
 test("displays new quote after button click", async () => {
