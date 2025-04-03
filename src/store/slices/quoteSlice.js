@@ -32,6 +32,7 @@ const quoteSlice = createSlice({
 export const fetchQuotes = createAsyncThunk("quotes/getQuotes", async () => {
   try {
     const response = await fetch("http://localhost:3000/quotes");
+    console.log(response);
     const data = response.json();
     return data;
   } catch (err) {
