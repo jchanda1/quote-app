@@ -6,35 +6,26 @@ import {
   selectLoadingState,
 } from "./store/slices/quoteSlice.js";
 import { useDispatch, useSelector } from "react-redux";
-import Card from "./components/UI/Card.jsx";
 import { CircularProgress } from "@mui/material";
+import Quote from "./components/Quote.jsx";
 
 function App() {
-  const [toggle, setToggle] = useState(false);
   const dispatch = useDispatch();
 
   const quote = useSelector(selectAllQuotes);
   const loading = useSelector(selectLoadingState);
+  console.log(quote);
+  const quoteCard = <Quote quote={quote} />;
 
-  const quoteCard = <Card quote={quote.quote} author={quote.author} />;
-
-  const loadingCircle = (
-    <div>
-      <CircularProgress />
-    </div>
-  );
+  const loadingCircle = <CircularProgress />;
 
   const buttonHandler = () => {
-    setToggle(!toggle);
-  };
-
-  useEffect(() => {
     dispatch(fetchQuotes());
-  }, [dispatch, toggle]);
+  };
 
   return (
     <>
-      {loading ? loadingCircle : quoteCard}
+      <div>{loading ? loadingCircle : quoteCard}</div>
       <button onClick={buttonHandler}>Click for a new quote</button>
     </>
   );
